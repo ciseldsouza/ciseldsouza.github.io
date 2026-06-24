@@ -565,10 +565,14 @@
         return;
       }
 
-      // Store locally (replace with your email service later)
-      const signups = JSON.parse(localStorage.getItem('signups') || '[]');
-      signups.push({ email, date: new Date().toISOString() });
-      localStorage.setItem('signups', JSON.stringify(signups));
+      const formData = new FormData();
+      formData.append('entry.1782329446', email);
+
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSfN8VW8dOFFSNBKRwaWBfcNBKXVIDjpQ82DxEApX68iMgsXHQ/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      });
 
       formRow.style.display = 'none';
       successMsg.style.display = 'block';
