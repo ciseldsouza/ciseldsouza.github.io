@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Cisel</title>
+  <meta name="description" content="Strategy thinking on brand, marketing, and ecommerce growth by Cisel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EF;
+      --warm-white: #2A2A28;
+      --ink: #F7F4EF;
+      --ink-light: #B5AFA8;
+      --accent: #C4A882;
+      --border: #333330;
+    }
+    body {
+      background: #1A1A18;
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 2rem; }
+    nav a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--ink); font-weight: 500; }
+
+    main { flex: 1; max-width: 800px; margin: 0 auto; padding: 5rem 2rem; width: 100%; }
+
+    .page-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+    .page-subtitle {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      margin-bottom: 4rem;
+      line-height: 1.7;
+    }
+
+    /* Post list */
+    .post-list { display: flex; flex-direction: column; gap: 0; }
+
+    .post-item {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2.5rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s;
+      align-items: start;
+    }
+    .post-item:first-child { border-top: 1px solid var(--border); }
+    .post-item:hover { opacity: 1; }
+    .post-item:hover .post-thumb { transform: scale(1.02); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .post-item:hover .post-title { color: var(--accent); }
+
+    .post-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #2A2A28;
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .post-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .post-thumb .no-photo {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .post-info {}
+    .post-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .post-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+      transition: color 0.25s;
+    }
+    .post-excerpt {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.75;
+    }
+    .post-readmore {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+    .post-readmore::after { content: '→'; font-size: 0.85rem; letter-spacing: 0; }
+
+    footer {
+      padding: 1.5rem 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-copy { font-size: 0.72rem; color: #B5AFA8; letter-spacing: 0.06em; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 600px) {
+      header { padding: 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+      .post-item { grid-template-columns: 1fr; gap: 1rem; }
+      .post-thumb { aspect-ratio: 16 / 9; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Cisel Dsouza</a>
+    <nav>
+      <a href="blog.html" class="active">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="page-eyebrow">Blog</p>
+    <h1 class="page-title">Strategy thinking,<br />written down.</h1>
+    <p class="page-subtitle">Perspectives on brand, marketing, and ecommerce — what works, what doesn't, and why.</p>
+
+    <div class="post-list">
+
+      <a href="blog/why-most-brands-lose-on-ecommerce.html" class="post-item">
+        <div class="post-thumb">
+          <!-- Replace with: <img src="../images/your-photo.jpg" alt="Post cover" /> -->
+          <div class="no-photo">Add photo</div>
+        </div>
+        <div class="post-info">
+          <span class="post-tag">Ecommerce &nbsp;·&nbsp; Jun 2026</span>
+          <h2 class="post-title">Why Most Brands Lose on Ecommerce Before They Even Start</h2>
+          <p class="post-excerpt">The biggest mistake isn't a bad product page or slow shipping. It's treating ecommerce like a channel instead of a business model. Here's what that actually means.</p>
+          <span class="post-readmore">Read more</span>
+        </div>
+      </a>
+
+      <a href="blog/brand-strategy-is-not-a-logo.html" class="post-item">
+        <div class="post-thumb">
+          <!-- Replace with: <img src="../images/your-photo.jpg" alt="Post cover" /> -->
+          <div class="no-photo">Add photo</div>
+        </div>
+        <div class="post-info">
+          <span class="post-tag">Brand Strategy &nbsp;·&nbsp; May 2026</span>
+          <h2 class="post-title">Brand Strategy Is Not a Logo (And Why the Confusion Costs You)</h2>
+          <p class="post-excerpt">Every week a founder tells me they need to "fix their branding." What they usually mean is they need a new logo. What they actually need is something much harder to buy.</p>
+          <span class="post-readmore">Read more</span>
+        </div>
+      </a>
+
+      <a href="blog/the-one-marketing-metric-that-matters.html" class="post-item">
+        <div class="post-thumb">
+          <!-- Replace with: <img src="../images/your-photo.jpg" alt="Post cover" /> -->
+          <div class="no-photo">Add photo</div>
+        </div>
+        <div class="post-info">
+          <span class="post-tag">Marketing &nbsp;·&nbsp; Apr 2026</span>
+          <h2 class="post-title">The One Marketing Metric That Actually Matters</h2>
+          <p class="post-excerpt">You can track open rates, CTR, ROAS, CAC, and fifty other acronyms. But if you're not watching this one number, you're optimizing the wrong thing entirely.</p>
+          <span class="post-readmore">Read more</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-copy">© 2026 Cisel. All rights reserved.</span>
+    <nav class="footer-links">
+      <a href="mailto:ciseldsouza@gmail.com">Contact</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/ciseldsouza/Claude/website/.claude)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(open http://localhost:3000/blog.html)",
+      "Bash(open http://localhost:3000/index.html)",
+      "Bash(brew install *)",
+      "Bash(git --version)",
+      "Bash(curl -L https://github.com/cli/cli/releases/download/v2.52.0/gh_2.52.0_macOS_arm64.tar.gz -o /tmp/gh.tar.gz)",
+      "Bash(tar -xzf /tmp/gh.tar.gz -C /tmp/)"
+    ]
+  }
+}

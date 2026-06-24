@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cisel Dsouza — Brand, Marketing & Ecommerce Strategy</title>
+  <meta name="description" content="Brand, marketing, and ecommerce strategy and optimization. Coming soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&family=Poppins:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream: #F7F4EF;
+      --warm-white: #2A2A28;
+      --ink: #F7F4EF;
+      --ink-light: #B5AFA8;
+      --accent: #C4A882;
+      --border: #333330;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #1A1A18;
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: none;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .status-pill {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 2rem;
+    }
+
+    .hero {
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 0.88;
+      color: var(--ink);
+      margin-bottom: 2.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .subline {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--ink-light);
+      max-width: 440px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── Email Form ── */
+    .form-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      background: #2A2A28;
+      border: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+      border-radius: 6px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-label {
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .form-sublabel {
+      font-size: 0.78rem;
+      color: #9A9A96;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+      text-align: center;
+    }
+
+    .input-row {
+      display: flex;
+      width: 100%;
+      gap: 0;
+      border: 1px solid #3A3A38;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #2A2A28;
+      transition: border-color 0.2s;
+    }
+
+    .input-row:focus-within {
+      border-color: var(--accent);
+    }
+
+    .input-row input[type="email"] {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 0.9rem 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .input-row input::placeholder {
+      color: #6A6A66;
+    }
+
+    .input-row button {
+      border: none;
+      background: var(--accent);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.9rem 1.6rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .input-row button:hover {
+      background: #D4B892;
+    }
+
+    .form-note {
+      font-size: 0.7rem;
+      color: #6A6A66;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Success state ── */
+    .success-msg {
+      display: none;
+      font-size: 0.88rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      padding: 0.8rem 1.4rem;
+      text-align: center;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin: 1.5rem auto 1.2rem;
+      opacity: 0.6;
+    }
+
+    /* ── Blog Preview ── */
+    .blog-preview {
+      padding: 1rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .blog-preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    .blog-preview-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .blog-preview-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .blog-preview-link:hover { color: var(--ink); }
+
+    .blog-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .blog-card {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: opacity 0.2s;
+    }
+    .blog-card:hover { opacity: 0.7; }
+
+    .blog-card-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #2A2A28;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      overflow: hidden;
+    }
+    .blog-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .blog-card-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .blog-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 300;
+      line-height: 1.3;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 700px) {
+      .blog-cards { grid-template-columns: 1fr; }
+    }
+
+    /* ── Disciplines ── */
+    .disciplines {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .discipline {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    /* ── Instagram Section ── */
+    .insta-section {
+      padding: 2rem 2rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .insta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    .insta-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .insta-handle {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .insta-handle:hover { color: var(--ink); }
+
+    .insta-scroll {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 1rem;
+      cursor: grab;
+    }
+    .insta-scroll:active { cursor: grabbing; }
+    .insta-scroll::-webkit-scrollbar { height: 3px; }
+    .insta-scroll::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
+    .insta-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+    .insta-card {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      aspect-ratio: 1 / 1;
+      background: #2A2A28;
+      border-radius: 3px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      position: relative;
+    }
+
+    .insta-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 1.5rem 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: #B5AFA8;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      header {
+        padding: 1.5rem 1.5rem;
+      }
+      footer {
+        padding: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .input-row {
+        flex-direction: column;
+        border-radius: 4px;
+      }
+      .input-row button {
+        padding: 0.85rem;
+        text-align: center;
+      }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="logo">cisel dsouza</a>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <a href="blog.html" style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#5A5A56;text-decoration:none;font-weight:500;">Blog</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="eyebrow">Strategy &amp; Optimization</p>
+      <h1>Brand, marketing<br />&amp; ecommerce<br /><em>strategy.</em></h1>
+
+      <div class="form-wrap">
+        <p class="form-label">Be the first to know<br />when I launch</p>
+        <p class="form-sublabel">Strategy thinking, straight to your inbox</p>
+        <div class="input-row" id="formRow">
+          <input type="email" id="emailInput" placeholder="your@email.com" autocomplete="email" />
+          <button type="button" onclick="handleSubmit()">Notify me</button>
+        </div>
+        <p class="success-msg" id="successMsg">✓ &nbsp;You're on the list. Talk soon.</p>
+        <p class="form-note">No spam. Just the launch announcement.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="disciplines">
+        <span class="discipline">Brand Strategy</span>
+        <span class="discipline">Marketing</span>
+        <span class="discipline">Ecommerce</span>
+        <span class="discipline">Growth Optimization</span>
+      </div>
+    </div>
+  </main>
+
+  <section class="blog-preview">
+    <div class="blog-preview-header">
+      <h2 class="blog-preview-title">Latest blog posts <span style="font-family:'Inter',sans-serif;font-size:1.1rem;animation:bounce 1.5s infinite;">↓</span></h2>
+      <a href="blog.html" class="blog-preview-link">All posts →</a>
+    </div>
+    <div class="blog-cards">
+      <a href="blog/why-most-brands-lose-on-ecommerce.html" class="blog-card">
+        <div class="blog-card-thumb">Add photo</div>
+        <span class="blog-card-tag">Ecommerce</span>
+        <h3 class="blog-card-title">Why Most Brands Lose on Ecommerce Before They Even Start</h3>
+        <p class="blog-card-excerpt">Treating ecommerce like a channel instead of a business model is the most expensive mistake.</p>
+      </a>
+      <a href="blog/brand-strategy-is-not-a-logo.html" class="blog-card">
+        <div class="blog-card-thumb">Add photo</div>
+        <span class="blog-card-tag">Brand Strategy</span>
+        <h3 class="blog-card-title">Brand Strategy Is Not a Logo (And Why the Confusion Costs You)</h3>
+        <p class="blog-card-excerpt">A logo is the output of a brand strategy. It should be the last thing you design, not the first.</p>
+      </a>
+      <a href="blog/the-one-marketing-metric-that-matters.html" class="blog-card">
+        <div class="blog-card-thumb">Add photo</div>
+        <span class="blog-card-tag">Marketing</span>
+        <h3 class="blog-card-title">The One Marketing Metric That Actually Matters</h3>
+        <p class="blog-card-excerpt">ROAS tells you if an ad worked today. LTV tells you if your marketing is working at all.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="insta-section">
+    <div class="insta-header">
+      <h2 class="insta-title">From Instagram</h2>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-handle">@ciseldsouza →</a>
+    </div>
+    <div style="position:relative;">
+    <button onclick="document.getElementById('instaScroll').scrollBy({left:-240,behavior:'smooth'})" style="position:absolute;left:-1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ink);font-size:1.4rem;cursor:pointer;z-index:2;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">‹</button>
+    <button onclick="document.getElementById('instaScroll').scrollBy({left:240,behavior:'smooth'})" style="position:absolute;right:-1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ink);font-size:1.4rem;cursor:pointer;z-index:2;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">›</button>
+    <div class="insta-scroll" id="instaScroll">
+      <!-- Replace "Add photo" cards with: <img src="../images/your-photo.jpg" alt="description" /> -->
+      <div class="insta-card">Add photo</div>
+      <div class="insta-card">Add photo</div>
+      <div class="insta-card">Add photo</div>
+      <div class="insta-card">Add photo</div>
+      <div class="insta-card">Add photo</div>
+      <div class="insta-card">Add photo</div>
+    </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2026 Cisel. All rights reserved.</span>
+    <nav class="footer-links">
+      <a href="mailto:ciseldsouza@gmail.com">Contact</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const input = document.getElementById('emailInput');
+      const formRow = document.getElementById('formRow');
+      const successMsg = document.getElementById('successMsg');
+      const email = input.value.trim();
+
+      if (!email || !email.includes('@')) {
+        input.style.outline = '2px solid #C4A882';
+        input.focus();
+        setTimeout(() => input.style.outline = '', 1500);
+        return;
+      }
+
+      // Store locally (replace with your email service later)
+      const signups = JSON.parse(localStorage.getItem('signups') || '[]');
+      signups.push({ email, date: new Date().toISOString() });
+      localStorage.setItem('signups', JSON.stringify(signups));
+
+      formRow.style.display = 'none';
+      successMsg.style.display = 'block';
+    }
+
+    document.getElementById('emailInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleSubmit();
+    });
+  </script>
+
+</body>
+</html>
