@@ -2,14 +2,19 @@
   <p class="font-serif italic text-lg text-bone mb-1">be the first to know when i launch</p>
   <form
     method="POST"
-    action="https://docs.google.com/forms/d/e/1FAIpQLSfN8VW8dOFFSNBKRwaWBfcNBKXVIDjpQ82DxEApX68iMgsXHQ/formResponse"
-    target="_blank"
+    name="launch-notify"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
     data-capture
     class="group flex items-baseline gap-3 border-b border-faint pb-2 transition-colors focus-within:border-champagne"
   >
+    <input type="hidden" name="form-name" value="launch-notify" />
+    <p class="hidden" aria-hidden="true">
+      <label>don't fill this out if you're human: <input name="bot-field" /></label>
+    </p>
     <input
       type="email"
-      name="entry.1485403170"
+      name="email"
       required
       placeholder="your@email.com"
       autocomplete="email"
@@ -36,8 +41,16 @@
     const success = document.querySelector<HTMLElement>('[data-success]')!;
     const error = document.querySelector<HTMLElement>('[data-error]')!;
     error.hidden = true;
-    fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
-      .then(() => {
+    const body = new URLSearchParams(
+      new FormData(form) as unknown as Record<string, string>
+    ).toString();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error(`form post failed: ${res.status}`);
         form.hidden = true;
         note.hidden = true;
         success.hidden = false;

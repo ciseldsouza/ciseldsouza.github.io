@@ -15,9 +15,10 @@ interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article';
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, ogType = 'website' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <html lang="en">
@@ -31,7 +32,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="alternate" type="application/rss+xml" title="cisel dsouza — journal" href="/rss.xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta name="generator" content={Astro.generator} />
   </head>

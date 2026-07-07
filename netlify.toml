@@ -1,0 +1,24 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+# Legacy URLs from the old hand-written site
+[[redirects]]
+  from = "/blog.html"
+  to = "/journal/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/brand-strategy-is-not-a-logo.html"
+  to = "/journal/brand-strategy-is-not-a-logo/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-one-marketing-metric-that-matters.html"
+  to = "/journal/the-one-marketing-metric-that-matters/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/why-most-brands-lose-on-ecommerce.html"
+  to = "/journal/why-most-brands-lose-on-ecommerce/"
+  status = 301

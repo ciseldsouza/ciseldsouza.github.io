@@ -17,7 +17,7 @@ const { Content } = await render(post);
 const minutes = readTime(post.body ?? '');
 const dateLabel = post.data.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }).toLowerCase();
 ---
-<Layout title={`${post.data.title} — cisel dsouza`} description={post.data.description}>
+<Layout title={`${post.data.title} — cisel dsouza`} description={post.data.description} ogType="article">
   <article class="mx-auto max-w-2xl px-6 pt-16 pb-12 md:pt-24">
     <a href="/journal/" class="u-link text-[0.65rem] tracking-[0.2em] uppercase text-muted hover:text-bone focus-visible:text-bone transition-colors">← all posts</a>
     <p class="sec-label mt-8">{post.data.tag}</p>
