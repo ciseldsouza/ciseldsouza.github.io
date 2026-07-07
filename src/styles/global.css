@@ -6,7 +6,7 @@
   --color-muted: #9c9488;
   --color-faint: #8a8377;
   --color-line: #2b2822;
-  --color-champagne: #C9BFAF;
+  --color-butter: #FEEEAE;
 
   --font-display: "Poppins", ui-sans-serif, sans-serif;
   --font-serif: "Instrument Serif", ui-serif, serif;
@@ -22,7 +22,7 @@ html {
 }
 
 ::selection {
-  background-color: var(--color-champagne);
+  background-color: var(--color-butter);
   color: var(--color-charcoal);
 }
 
@@ -47,7 +47,7 @@ html {
   bottom: -2px;
   height: 1px;
   width: 100%;
-  background: var(--color-champagne);
+  background: var(--color-butter);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s ease;
@@ -95,14 +95,14 @@ html {
   margin: 2.5rem 0 1rem;
   color: var(--color-bone);
 }
-.prose-journal strong { font-weight: 500; color: var(--color-champagne); }
-.prose-journal a { color: var(--color-champagne); text-decoration: underline; text-underline-offset: 3px; }
+.prose-journal strong { font-weight: 500; color: var(--color-butter); }
+.prose-journal a { color: var(--color-butter); text-decoration: underline; text-underline-offset: 3px; }
 .prose-journal ul, .prose-journal ol { margin: 0 0 1.5rem 1.25rem; }
 .prose-journal ul { list-style: disc; }
 .prose-journal ol { list-style: decimal; }
 .prose-journal li { margin-bottom: 0.5rem; }
 .prose-journal blockquote {
-  border-left: 1px solid var(--color-champagne);
+  border-left: 1px solid var(--color-butter);
   padding-left: 1.25rem;
   font-family: var(--font-serif);
   font-style: italic;
