@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const links = [
+  { label: 'email', value: 'ciseldsouza@gmail.com', href: 'mailto:ciseldsouza@gmail.com' },
+  { label: 'instagram', value: '@ciseldsouza', href: 'https://instagram.com/ciseldsouza' },
+  { label: 'linkedin', value: 'cisel dsouza', href: 'https://linkedin.com' },
+];
+---
+<Layout title="contact — cisel dsouza" description="Say hello — email, Instagram, or LinkedIn.">
+  <section class="px-6 pt-16 pb-16 md:px-12 md:pt-24">
+    <h1 class="font-display font-semibold lowercase leading-none tracking-[-0.02em] text-[clamp(2.5rem,7vw,5.5rem)]" data-reveal>
+      say <em class="font-serif italic font-normal">hello</em>
+    </h1>
+    <div class="mt-14 max-w-xl border-t border-line" data-reveal>
+      {links.map(({ label, value, href }) => (
+        <a
+          href={href}
+          target={href.startsWith('http') ? '_blank' : undefined}
+          rel={href.startsWith('http') ? 'noopener' : undefined}
+          class="group flex items-baseline justify-between gap-6 border-b border-line py-5 transition-transform duration-300 hover:translate-x-2 focus-visible:translate-x-2"
+        >
+          <span class="sec-label">{label}</span>
+          <span class="font-serif text-xl text-bone group-hover:text-champagne group-focus-visible:text-champagne transition-colors">{value}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
