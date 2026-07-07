@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import JournalRow from '../../components/JournalRow.astro';
+
+const posts = (await getCollection('journal', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Layout title="journal — cisel dsouza" description="Writing on brand strategy, marketing, and ecommerce.">
+  <section class="px-6 pt-16 pb-12 md:px-12 md:pt-24">
+    <h1 class="font-display font-semibold lowercase leading-none tracking-[-0.02em] text-[clamp(2.5rem,6vw,4.5rem)]" data-reveal>
+      the <em class="font-serif italic font-normal">journal</em>
+    </h1>
+    <p class="mt-6 max-w-sm text-sm font-light leading-relaxed text-muted" data-reveal>
+      thinking on brand, marketing &amp; ecommerce — published occasionally, when there's something worth saying.
+    </p>
+  </section>
+  <section class="px-6 pb-16 md:px-12">
+    <div class="border-t border-line">
+      {posts.map((post, i) => <JournalRow post={post} index={i} />)}
+    </div>
+  </section>
+</Layout>

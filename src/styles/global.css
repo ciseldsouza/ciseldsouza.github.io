@@ -77,3 +77,21 @@ html {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+/* journal article body */
+.prose-journal {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--color-bone);
+}
+.prose-journal p { margin-bottom: 1.5rem; }
+.prose-journal h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin: 2.5rem 0 1rem;
+  color: var(--color-bone);
+}
+.prose-journal strong { font-weight: 500; color: var(--color-champagne); }
+.prose-journal a { color: var(--color-champagne); text-decoration: underline; text-underline-offset: 3px; }
