@@ -1,0 +1,35 @@
+<div class="max-w-md" data-reveal>
+  <p class="font-serif italic text-lg text-bone mb-1">be the first to know when i launch</p>
+  <form
+    method="POST"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSfN8VW8dOFFSNBKRwaWBfcNBKXVIDjpQ82DxEApX68iMgsXHQ/formResponse"
+    target="_blank"
+    data-capture
+    class="group flex items-baseline gap-3 border-b border-faint pb-2 transition-colors focus-within:border-champagne"
+  >
+    <input
+      type="email"
+      name="entry.1485403170"
+      required
+      placeholder="your@email.com"
+      autocomplete="email"
+      class="w-full bg-transparent font-body text-sm font-light text-bone placeholder:text-faint focus:outline-none"
+    />
+    <button type="submit" class="shrink-0 text-[0.65rem] tracking-[0.2em] uppercase text-champagne cursor-pointer">
+      notify me →
+    </button>
+  </form>
+  <p class="mt-2 text-[0.65rem] tracking-[0.04em] text-faint" data-note>no spam. just the launch announcement.</p>
+  <p class="mt-2 font-serif italic text-sm text-champagne" data-success hidden>you're on the list. talk soon.</p>
+</div>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-capture]');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) });
+    form.hidden = true;
+    document.querySelector<HTMLElement>('[data-note]')!.hidden = true;
+    document.querySelector<HTMLElement>('[data-success]')!.hidden = false;
+  });
+</script>

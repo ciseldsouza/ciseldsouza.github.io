@@ -1,6 +1,61 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import Capture from '../components/Capture.astro';
+import Marquee from '../components/Marquee.astro';
+import JournalRow from '../components/JournalRow.astro';
+
+const posts = (await getCollection('journal', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 ---
-<Layout title="cisel dsouza — brand, marketing & ecommerce strategy" description="Brand, marketing, and ecommerce strategy & optimization.">
-  <h1 class="font-serif italic text-4xl p-8" data-reveal>layout ok</h1>
+<Layout
+  title="cisel dsouza — brand, marketing & ecommerce strategy"
+  description="Brand, marketing, and ecommerce strategy & optimization for brands that want to matter."
+>
+  <section class="px-6 pt-16 pb-12 md:px-12 md:pt-24 md:pb-16">
+    <h1 class="font-display font-semibold lowercase leading-[0.98] tracking-[-0.02em] text-[clamp(3rem,8vw,6.5rem)]" data-reveal>
+      brand,<br />marketing<br />&amp; <em class="font-serif italic font-normal">ecommerce</em>
+    </h1>
+    <div class="mt-8 flex flex-wrap items-end justify-between gap-6" data-reveal>
+      <p class="max-w-xs text-sm font-light leading-relaxed text-muted">
+        strategy &amp; optimization for brands that want to matter.
+      </p>
+      <span class="sec-label">est. 2026</span>
+    </div>
+    <div class="mt-12">
+      <Capture />
+    </div>
+  </section>
+
+  <Marquee />
+
+  <section class="px-6 py-12 md:px-12 md:py-16">
+    <div class="mb-6 flex items-baseline justify-between" data-reveal>
+      <h2 class="sec-label">selected thinking</h2>
+      <a href="/journal" class="u-link text-[0.65rem] tracking-[0.2em] uppercase text-muted hover:text-bone focus-visible:text-bone transition-colors">all posts →</a>
+    </div>
+    <div class="border-t border-line">
+      {posts.map((post, i) => <JournalRow post={post} index={i} />)}
+    </div>
+  </section>
+
+  <section class="grid border-t border-line md:grid-cols-2">
+    <div class="border-b border-line px-6 py-10 md:border-b-0 md:border-r md:px-12" data-reveal>
+      <h2 class="sec-label mb-5">services</h2>
+      <ul class="font-serif text-xl leading-loose text-bone">
+        <li>brand strategy</li>
+        <li>marketing</li>
+        <li>ecommerce</li>
+        <li>growth</li>
+      </ul>
+    </div>
+    <div class="px-6 py-10 md:px-12" data-reveal>
+      <h2 class="sec-label mb-5">elsewhere</h2>
+      <p class="max-w-xs text-sm font-light leading-relaxed text-muted">
+        daily thinking, behind the scenes, and work in progress —
+        <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="u-link text-bone">@ciseldsouza</a>
+      </p>
+    </div>
+  </section>
 </Layout>
