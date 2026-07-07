@@ -5,14 +5,14 @@ export async function GET(context) {
   const posts = await getPublishedPosts();
 
   return rss({
-    title: 'cisel dsouza — journal',
-    description: 'Writing on brand strategy, marketing, and ecommerce.',
+    title: 'cisel dsouza — the decodes',
+    description: "Weekly breakdowns of the marketing, branding and psychology behind the brands everyone's talking about.",
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
-      link: `/journal/${post.id}/`,
+      link: `/decodes/${post.id}/`,
     })),
   });
 }

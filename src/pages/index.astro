@@ -31,9 +31,14 @@ const posts = (await getPublishedPosts()).slice(0, 3);
   <Marquee />
 
   <section class="px-6 py-12 md:px-12 md:py-16">
-    <div class="mb-6 flex items-baseline justify-between" data-reveal>
-      <h2 class="sec-label">selected thinking</h2>
-      <a href="/journal" class="u-link text-[0.65rem] tracking-[0.2em] uppercase text-muted hover:text-bone focus-visible:text-bone transition-colors">all posts →</a>
+    <div class="mb-8 flex flex-wrap items-end justify-between gap-6" data-reveal>
+      <div>
+        <h2 class="font-serif text-3xl text-bone md:text-4xl">the <em class="italic text-champagne">decodes</em></h2>
+        <p class="mt-2 max-w-sm text-base font-light leading-relaxed text-muted">
+          weekly breakdowns of the marketing, branding and psychology behind brands you know.
+        </p>
+      </div>
+      <a href="/decodes/" class="u-link text-[0.7rem] tracking-[0.2em] uppercase text-muted hover:text-bone focus-visible:text-bone transition-colors">all decodes <span aria-hidden="true">→</span></a>
     </div>
     <div class="border-t border-line">
       {posts.map((post, i) => <JournalRow post={post} index={i} />)}

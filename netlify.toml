@@ -5,20 +5,26 @@
 # Legacy URLs from the old hand-written site
 [[redirects]]
   from = "/blog.html"
-  to = "/journal/"
+  to = "/decodes/"
   status = 301
 
 [[redirects]]
   from = "/blog/brand-strategy-is-not-a-logo.html"
-  to = "/journal/brand-strategy-is-not-a-logo/"
+  to = "/decodes/brand-strategy-is-not-a-logo/"
   status = 301
 
 [[redirects]]
   from = "/blog/the-one-marketing-metric-that-matters.html"
-  to = "/journal/the-one-marketing-metric-that-matters/"
+  to = "/decodes/the-one-marketing-metric-that-matters/"
   status = 301
 
 [[redirects]]
   from = "/blog/why-most-brands-lose-on-ecommerce.html"
-  to = "/journal/why-most-brands-lose-on-ecommerce/"
+  to = "/decodes/why-most-brands-lose-on-ecommerce/"
+  status = 301
+
+# Route rename: journal → decodes
+[[redirects]]
+  from = "/journal/*"
+  to = "/decodes/:splat"
   status = 301
