@@ -1,13 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Capture from '../components/Capture.astro';
 import Marquee from '../components/Marquee.astro';
 import JournalRow from '../components/JournalRow.astro';
+import { getPublishedPosts } from '../utils/posts';
 
-const posts = (await getCollection('journal', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+const posts = (await getPublishedPosts()).slice(0, 3);
 ---
 <Layout
   title="cisel dsouza — brand, marketing & ecommerce strategy"
