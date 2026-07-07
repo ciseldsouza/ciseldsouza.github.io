@@ -14,6 +14,8 @@
 }
 
 html {
+  /* 18px root — scales every rem-based size on the site up ~12% */
+  font-size: 112.5%;
   background-color: var(--color-charcoal);
   color: var(--color-bone);
   font-family: var(--font-body);
@@ -27,7 +29,7 @@ html {
 /* tiny uppercase letterspaced meta label */
 .sec-label {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-faint);
