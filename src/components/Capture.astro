@@ -14,7 +14,7 @@
       placeholder="your@email.com"
       autocomplete="email"
       aria-label="email address"
-      class="w-full bg-transparent font-body text-sm font-light text-bone placeholder:text-faint outline-none focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-champagne/50"
+      class="w-full bg-transparent font-body text-sm font-light text-bone placeholder:text-faint outline-none focus-visible:outline-solid focus-visible:outline-offset-4 focus-visible:outline-champagne/50"
     />
     <button type="submit" class="shrink-0 text-[0.65rem] tracking-[0.2em] uppercase text-champagne cursor-pointer">
       notify me <span aria-hidden="true">→</span>
@@ -27,8 +27,11 @@
 
 <script>
   const form = document.querySelector<HTMLFormElement>('[data-capture]');
+  let pending = false;
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (pending) return;
+    pending = true;
     const note = document.querySelector<HTMLElement>('[data-note]')!;
     const success = document.querySelector<HTMLElement>('[data-success]')!;
     const error = document.querySelector<HTMLElement>('[data-error]')!;
@@ -41,6 +44,9 @@
       })
       .catch(() => {
         error.hidden = false;
+      })
+      .finally(() => {
+        pending = false;
       });
   });
 </script>
