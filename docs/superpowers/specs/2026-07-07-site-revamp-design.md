@@ -36,7 +36,7 @@ Manifesto page: one large italic-serif statement, two short bio paragraphs, disc
 Full numbered index of all posts, same row style as home. Tags shown; no filtering UI needed at 3 posts (design leaves room for it).
 
 ### `/journal/<slug>`
-Reading layout: serif display title, tag + date + read time meta, ~65ch measure, generous leading, styled markdown (pull quotes, lists), prev/next post links at the bottom. The 3 existing HTML posts (`brand-strategy-is-not-a-logo`, `the-one-marketing-metric-that-matters`, `why-most-brands-lose-on-ecommerce`) migrate to markdown, served at new `/journal/<slug>/` paths. Legacy paths (`/blog.html`, `/blog/<slug>.html`) get static meta-refresh redirect pages to their new equivalents (generated via Astro's `redirects` config).
+Reading layout: serif display title, tag + date + read time meta, ~65ch measure, generous leading, styled markdown (pull quotes, lists), prev/next post links at the bottom. The 3 existing HTML posts (`brand-strategy-is-not-a-logo`, `the-one-marketing-metric-that-matters`, `why-most-brands-lose-on-ecommerce`) migrate to markdown, served at new `/journal/<slug>/` paths. Legacy paths (`/blog.html`, `/blog/<slug>.html`) get static meta-refresh redirect pages to their new equivalents (hand-written stubs in `public/`, since Astro's `redirects` config turns `.html`-suffixed routes into directories).
 
 ### `/contact`
 Big "say hello" statement; email (mailto), LinkedIn, Instagram links in the index-row style.
