@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Capture from '../components/Capture.astro';
 import Marquee from '../components/Marquee.astro';
 import JournalRow from '../components/JournalRow.astro';
+import InstaStrip from '../components/InstaStrip.astro';
 import { getPublishedPosts } from '../utils/posts';
 
 const posts = (await getPublishedPosts()).slice(0, 3);
@@ -56,4 +57,6 @@ const posts = (await getPublishedPosts()).slice(0, 3);
       </p>
     </div>
   </section>
+
+  <InstaStrip />
 </Layout>

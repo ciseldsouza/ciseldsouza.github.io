@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/instagram/*.{jpg,jpeg,png,webp}',
+  { eager: true }
+);
+const images = Object.values(modules).map((m) => m.default);
+---
+{images.length > 0 && (
+  <section class="border-t border-line px-6 py-10 md:px-12" data-reveal>
+    <div class="mb-5 flex items-baseline justify-between">
+      <h2 class="sec-label">from instagram</h2>
+      <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="u-link text-[0.65rem] tracking-[0.2em] uppercase text-muted hover:text-bone focus-visible:text-bone transition-colors">@ciseldsouza <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3">
+      {images.map((img) => (
+        <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="shrink-0 snap-start">
+          <Image
+            src={img}
+            alt="Instagram post by @ciseldsouza"
+            width={440}
+            height={440}
+            class="aspect-square w-52 rounded-sm object-cover brightness-[.92] saturate-[.85] transition hover:brightness-100 hover:saturate-100 focus-visible:brightness-100 focus-visible:saturate-100"
+          />
+        </a>
+      ))}
+    </div>
+  </section>
+)}
