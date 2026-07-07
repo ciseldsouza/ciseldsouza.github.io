@@ -46,7 +46,7 @@ Styled, on-brand, links home.
 
 ## 2. Visual system
 
-- **Palette:** background `#191714` (warm charcoal), text `#EFEAE2` (bone), muted `#8f887c`, faint `#6e675c`, hairlines `#2b2822`, interactive accent `#C9BFAF` (champagne) used sparingly. No pure black/white, no gold fills.
+- **Palette:** background `#191714` (warm charcoal), text `#EFEAE2` (bone), muted `#9c9488`, faint `#8a8377`, hairlines `#2b2822`, interactive accent `#C9BFAF` (champagne) used sparingly. No pure black/white, no gold fills. (Muted/faint lightened from the original draft values during implementation to meet WCAG AA 4.5:1 contrast on charcoal.)
 - **Type:** Poppins 300/500/600 (display + UI), Instrument Serif regular + italic (accent words, journal titles, numbers), Inter 300/400/500 (prose + meta). Self-hosted via Fontsource packages — zero external font requests.
 - **Type scale:** hero `clamp(3rem, 8vw, 6.5rem)`; journal titles ~1.5–2rem serif; meta 0.65–0.75rem uppercase letterspaced.
 - **Motion:** fade-up on scroll via IntersectionObserver + CSS classes; slow marquee text band (CSS animation); hover: index rows shift right slightly, underlines animate in. Everything gated behind `prefers-reduced-motion: no-preference`.
@@ -58,7 +58,7 @@ Styled, on-brand, links home.
 - **Content:** `src/content/journal/*.md`, schema: `title`, `description`, `date`, `tag` (enum: brand strategy | marketing | ecommerce | growth), optional `draft`. Read time computed from word count at build.
 - **SEO:** per-page titles/descriptions, OG tags, sitemap, RSS feed at `/rss.xml`, canonical URLs on `https://ciseldsouza.com`.
 - **Repo layout:** Astro project at repo root (`src/`, `public/`, `astro.config.mjs`, `package.json`). Old `index.html`, `blog.html`, `blog/`, `post.css` deleted after content migration.
-- **Deploy:** GitHub Actions workflow (`.github/workflows/deploy.yml`): push to `main` → pnpm install → `astro build` → `actions/upload-pages-artifact` → `actions/deploy-pages`. `CNAME` kept in `public/`. **Manual step:** switch repo Pages setting from "deploy from branch" to "GitHub Actions". GoDaddy DNS untouched.
+- **Deploy (revised 2026-07-08, supersedes GitHub Pages plan):** Netlify, connected to the GitHub repo (`netlify.toml`: `pnpm build` → `dist`). Legacy `/blog*.html` URLs are 301-redirected via `netlify.toml` (replaces the meta-refresh stubs). The email capture is a **Netlify Form** (`launch-notify`, honeypot spam filter, real success/failure responses) instead of Google Forms. Cutover: test on the `*.netlify.app` URL → point GoDaddy DNS (apex A → Netlify, `www` CNAME → site.netlify.app) → merge to `main`, set Netlify production branch to `main`, disable GitHub Pages. The old site keeps serving from GitHub Pages until the DNS flip.
 
 ## 4. Instagram strip
 
