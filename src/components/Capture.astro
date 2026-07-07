@@ -13,23 +13,34 @@
       required
       placeholder="your@email.com"
       autocomplete="email"
-      class="w-full bg-transparent font-body text-sm font-light text-bone placeholder:text-faint focus:outline-none"
+      aria-label="email address"
+      class="w-full bg-transparent font-body text-sm font-light text-bone placeholder:text-faint outline-none focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-champagne/50"
     />
     <button type="submit" class="shrink-0 text-[0.65rem] tracking-[0.2em] uppercase text-champagne cursor-pointer">
-      notify me →
+      notify me <span aria-hidden="true">→</span>
     </button>
   </form>
   <p class="mt-2 text-[0.65rem] tracking-[0.04em] text-faint" data-note>no spam. just the launch announcement.</p>
-  <p class="mt-2 font-serif italic text-sm text-champagne" data-success hidden>you're on the list. talk soon.</p>
+  <p class="mt-2 font-serif italic text-sm text-champagne" data-success hidden role="status">you're on the list. talk soon.</p>
+  <p class="mt-2 text-[0.65rem] tracking-[0.04em] text-champagne" data-error hidden role="alert">something went wrong — please try again.</p>
 </div>
 
 <script>
   const form = document.querySelector<HTMLFormElement>('[data-capture]');
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) });
-    form.hidden = true;
-    document.querySelector<HTMLElement>('[data-note]')!.hidden = true;
-    document.querySelector<HTMLElement>('[data-success]')!.hidden = false;
+    const note = document.querySelector<HTMLElement>('[data-note]')!;
+    const success = document.querySelector<HTMLElement>('[data-success]')!;
+    const error = document.querySelector<HTMLElement>('[data-error]')!;
+    error.hidden = true;
+    fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
+      .then(() => {
+        form.hidden = true;
+        note.hidden = true;
+        success.hidden = false;
+      })
+      .catch(() => {
+        error.hidden = false;
+      });
   });
 </script>
