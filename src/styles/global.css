@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #191714;
+  --color-bone: #EFEAE2;
+  --color-muted: #8f887c;
+  --color-faint: #6e675c;
+  --color-line: #2b2822;
+  --color-champagne: #C9BFAF;
+
+  --font-display: "Poppins", ui-sans-serif, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, serif;
+  --font-body: "Inter", ui-sans-serif, sans-serif;
+}
+
+html {
+  background-color: var(--color-charcoal);
+  color: var(--color-bone);
+  font-family: var(--font-body);
+}
