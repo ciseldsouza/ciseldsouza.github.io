@@ -3,587 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cisel Dsouza — Brand, Marketing & Ecommerce Strategy</title>
-  <meta name="description" content="Brand, marketing, and ecommerce strategy and optimization. Coming soon." />
+  <title>Cisel Dsouza — Marketing & Branding, Decoded</title>
+  <meta name="description" content="Cisel Dsouza decodes the marketing, branding and psychology behind the brands you know. New decode every week." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&family=Poppins:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --cream: #F7F4EF;
-      --warm-white: #2A2A28;
-      --ink: #F7F4EF;
-      --ink-light: #B5AFA8;
-      --accent: #C4A882;
-      --border: #333330;
-    }
-
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      background-color: #1A1A18;
-      color: var(--ink);
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* ── Header ── */
-    header {
-      padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      text-transform: none;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .status-pill {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      border: 1px solid var(--border);
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-    }
-
-    /* ── Main ── */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem 2rem;
-    }
-
-    .hero {
-      max-width: 620px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-      font-weight: 700;
-      line-height: 0.88;
-      color: var(--ink);
-      margin-bottom: 2.5rem;
-    }
-
-    h1 em {
-      font-style: italic;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .subline {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: var(--ink-light);
-      max-width: 440px;
-      margin: 0 auto 1.5rem;
-    }
-
-    /* ── Email Form ── */
-    .form-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      background: #2A2A28;
-      border: 1px solid var(--border);
-      padding: 1.8rem 2rem;
-      border-radius: 6px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .form-label {
-      font-size: 1.1rem;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      color: var(--cream);
-      margin-bottom: 0.2rem;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    .form-sublabel {
-      font-size: 0.78rem;
-      color: #9A9A96;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.6rem;
-      text-align: center;
-    }
-
-    .input-row {
-      display: flex;
-      width: 100%;
-      gap: 0;
-      border: 1px solid #3A3A38;
-      border-radius: 4px;
-      overflow: hidden;
-      background: #2A2A28;
-      transition: border-color 0.2s;
-    }
-
-    .input-row:focus-within {
-      border-color: var(--accent);
-    }
-
-    .input-row input[type="email"] {
-      flex: 1;
-      border: none;
-      outline: none;
-      background: transparent;
-      padding: 0.9rem 1.2rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: var(--cream);
-    }
-
-    .input-row input::placeholder {
-      color: #6A6A66;
-    }
-
-    .input-row button {
-      border: none;
-      background: var(--accent);
-      color: var(--ink);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.9rem 1.6rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-
-    .input-row button:hover {
-      background: #D4B892;
-    }
-
-    .form-note {
-      font-size: 0.7rem;
-      color: #6A6A66;
-      letter-spacing: 0.04em;
-    }
-
-    /* ── Success state ── */
-    .success-msg {
-      display: none;
-      font-size: 0.88rem;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      padding: 0.8rem 1.4rem;
-      text-align: center;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-      margin: 1.5rem auto 1.2rem;
-      opacity: 0.6;
-    }
-
-    /* ── Blog Preview ── */
-    .blog-preview {
-      padding: 1rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .blog-preview-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 2.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1rem;
-    }
-
-    .blog-preview-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    .blog-preview-link {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 1px;
-      transition: color 0.2s;
-    }
-    .blog-preview-link:hover { color: var(--ink); }
-
-    .blog-cards {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 1rem;
-      cursor: grab;
-    }
-    .blog-cards:active { cursor: grabbing; }
-    .blog-cards::-webkit-scrollbar { height: 3px; }
-    .blog-cards::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
-    .blog-cards::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
-
-    .blog-card {
-      flex: 0 0 260px;
-      scroll-snap-align: start;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      transition: opacity 0.2s;
-    }
-    .blog-card:hover { opacity: 0.7; }
-
-    .blog-card-thumb {
-      width: 100%;
-      aspect-ratio: 4/3;
-      background: #2A2A28;
-      border-radius: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      overflow: hidden;
-    }
-    .blog-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .blog-card-tag {
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .blog-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 300;
-      line-height: 1.3;
-    }
-
-    .blog-card-excerpt {
-      font-size: 0.8rem;
-      color: var(--ink-light);
-      line-height: 1.7;
-    }
-
-    @media (max-width: 700px) {
-      .blog-cards { grid-template-columns: 1fr; }
-    }
-
-    /* ── Disciplines ── */
-    .disciplines {
-      display: flex;
-      justify-content: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .discipline {
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
-
-    /* ── Instagram Section ── */
-    .insta-section {
-      padding: 2rem 2rem 3rem;
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .insta-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1rem;
-    }
-
-    .insta-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .insta-handle {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 1px;
-      transition: color 0.2s;
-    }
-    .insta-handle:hover { color: var(--ink); }
-
-    .insta-scroll {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 1rem;
-      cursor: grab;
-    }
-    .insta-scroll:active { cursor: grabbing; }
-    .insta-scroll::-webkit-scrollbar { height: 3px; }
-    .insta-scroll::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
-    .insta-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
-
-    .insta-card {
-      flex: 0 0 220px;
-      scroll-snap-align: start;
-      aspect-ratio: 1 / 1;
-      background: #2A2A28;
-      border-radius: 3px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      position: relative;
-    }
-
-    .insta-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ── Footer ── */
-    footer {
-      padding: 1.5rem 3rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .footer-copy {
-      font-size: 0.72rem;
-      color: #B5AFA8;
-      letter-spacing: 0.06em;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-links a {
-      font-size: 0.72rem;
-      color: var(--ink-light);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--ink);
-    }
-
-    /* ── Mobile ── */
-    @media (max-width: 600px) {
-      header {
-        padding: 1.5rem 1.5rem;
-      }
-      footer {
-        padding: 1.5rem;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .input-row {
-        flex-direction: column;
-        border-radius: 4px;
-      }
-      .input-row button {
-        padding: 0.85rem;
-        text-align: center;
-      }
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(5px); }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <a href="/" class="logo">cisel dsouza</a>
-    <div style="display:flex;align-items:center;gap:1.5rem;">
-      <a href="blog.html" style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#5A5A56;text-decoration:none;font-weight:500;">Blog</a>
+  <!-- Announcement bar -->
+  <div class="announce-bar">Marketing & Branding, Decoded — New decode every week</div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">cisel</a>
+    <div class="nav-links">
+      <a href="decodes.html">Decodes</a>
+      <a href="about.html">About</a>
+      <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="nav-ig" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <div class="hero">
-      <p class="eyebrow">Strategy &amp; Optimization</p>
-      <h1>Brand, marketing<br />&amp; ecommerce<br /><em>strategy.</em></h1>
-
-      <div class="form-wrap">
-        <p class="form-label">Be the first to know<br />when I launch</p>
-        <p class="form-sublabel">Strategy thinking, straight to your inbox</p>
-        <div class="input-row" id="formRow">
-          <input type="email" id="emailInput" placeholder="your@email.com" autocomplete="email" />
-          <button type="button" onclick="handleSubmit()">Notify me</button>
-        </div>
-        <p class="success-msg" id="successMsg">✓ &nbsp;You're on the list. Talk soon.</p>
-        <p class="form-note">No spam. Just the launch announcement.</p>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="disciplines">
-        <span class="discipline">Brand Strategy</span>
-        <span class="discipline">Marketing</span>
-        <span class="discipline">Ecommerce</span>
-        <span class="discipline">Growth Optimization</span>
-      </div>
+  <!-- 1. HERO -->
+  <section class="hero">
+    <h1>You know the brands.<br />Here's why you buy them.</h1>
+    <p class="hero-sub">I'm Cisel — I decode the marketing, branding and psychology behind the brands everyone's talking about. New decode every week.</p>
+    <div class="hero-buttons">
+      <a href="decodes.html" class="btn btn-primary">Read the decodes</a>
+      <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="btn btn-outline">Follow on Instagram</a>
     </div>
-  </main>
+  </section>
 
-  <section class="blog-preview">
-    <div class="blog-preview-header">
-      <h2 class="blog-preview-title">Latest blog posts <span style="font-family:'Inter',sans-serif;font-size:1.1rem;animation:bounce 1.5s infinite;">↓</span></h2>
-      <a href="blog.html" class="blog-preview-link">All posts →</a>
-    </div>
-    <div class="blog-cards">
-      <div class="blog-card">
-        <div class="blog-card-thumb">Add photo</div>
-        <span class="blog-card-tag">Ecommerce</span>
+  <!-- 2. VIDEO -->
+  <div class="video-section">
+    <video autoplay muted loop playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- 3. FEATURED DECODES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">Latest Decodes</span>
+        <a href="decodes.html" class="section-link">View all &rarr;</a>
       </div>
-      <div class="blog-card">
-        <div class="blog-card-thumb">Add photo</div>
-        <span class="blog-card-tag">Brand Strategy</span>
-      </div>
-      <div class="blog-card">
-        <div class="blog-card-thumb">Add photo</div>
-        <span class="blog-card-tag">Marketing</span>
+      <div class="cards-grid">
+
+        <a href="decodes/why-you-trust-brands-youve-never-tried.html" class="decode-card">
+          <span class="decode-card-num">01</span>
+          <h3>Why You Trust Brands You've Never Tried</h3>
+          <p>You believed the product was great before you touched it. That wasn't an accident.</p>
+          <span class="read-link">Read &rarr;</span>
+        </a>
+
+        <a href="decodes/brands-stopped-selling-products.html" class="decode-card">
+          <span class="decode-card-num">02</span>
+          <h3>Brands Stopped Selling Products. Here's What They Sell Now.</h3>
+          <p>The most valuable brands of the decade barely talk about what's in the box.</p>
+          <span class="read-link">Read &rarr;</span>
+        </a>
+
+        <a href="decodes/the-purchase-that-never-happened.html" class="decode-card">
+          <span class="decode-card-num">03</span>
+          <h3>The Purchase That Never Happened</h3>
+          <p>The product was in the cart. The intention was real. So where did the sale go?</p>
+          <span class="read-link">Read &rarr;</span>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <section class="insta-section">
-    <div class="insta-header">
-      <h2 class="insta-title">From Instagram</h2>
-      <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-handle">@ciseldsouza →</a>
+  <!-- 4. ABOUT STRIP -->
+  <div class="about-strip">
+    <div class="about-strip-photo">
+      <!-- Replace with: <img src="images/cisel.jpg" alt="Cisel Dsouza" /> -->
     </div>
-    <div style="position:relative;">
-    <button onclick="document.getElementById('instaScroll').scrollBy({left:-240,behavior:'smooth'})" style="position:absolute;left:-1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ink);font-size:1.4rem;cursor:pointer;z-index:2;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">‹</button>
-    <button onclick="document.getElementById('instaScroll').scrollBy({left:240,behavior:'smooth'})" style="position:absolute;right:-1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--ink);font-size:1.4rem;cursor:pointer;z-index:2;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">›</button>
-    <div class="insta-scroll" id="instaScroll">
-      <!-- Replace "Add photo" cards with: <img src="../images/your-photo.jpg" alt="description" /> -->
-      <div class="insta-card">Add photo</div>
-      <div class="insta-card">Add photo</div>
-      <div class="insta-card">Add photo</div>
-      <div class="insta-card">Add photo</div>
-      <div class="insta-card">Add photo</div>
-      <div class="insta-card">Add photo</div>
+    <div class="about-strip-text">
+      <span class="kicker">About</span>
+      <h2>Philosophy grad turned ecommerce operator turned decoder.</h2>
+      <p>I read brands two ways at once — the psychology and the numbers. I've spent years inside brand strategy and ecommerce watching which ideas move people and which ones just move budgets.</p>
+      <a href="about.html" class="about-link">More about me &rarr;</a>
     </div>
+  </div>
+
+  <!-- 5. INSTAGRAM ROW -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">The weekly version</span>
+        <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="section-link">@ciseldsouza &rarr;</a>
+      </div>
+      <div class="ig-grid">
+        <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="ig-tile">
+          <!-- <img src="images/ig1.jpg" alt="" /> -->
+        </a>
+        <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="ig-tile">
+          <!-- <img src="images/ig2.jpg" alt="" /> -->
+        </a>
+        <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="ig-tile">
+          <!-- <img src="images/ig3.jpg" alt="" /> -->
+        </a>
+      </div>
     </div>
+  </section>
+
+  <!-- 6. EMAIL SIGNUP -->
+  <section class="signup-section">
+    <h2>The decode,<br />in your inbox.</h2>
+    <p class="signup-subtext">One email a month: the best breakdown, plus what I'm seeing next.</p>
+    <span class="signup-italic">No spam, ever.</span>
+    <form class="signup-form" id="signup-form">
+      <input type="email" id="email-input" placeholder="your@email.com" required autocomplete="email" />
+      <button type="submit">I'm in &rarr;</button>
+    </form>
+    <p class="signup-note">Unsubscribe any time.</p>
+    <p class="signup-success" id="signup-success">You're in. See you in your inbox.</p>
   </section>
 
   <footer>
-    <span class="footer-copy">© 2026 Cisel. All rights reserved.</span>
-    <nav class="footer-links">
-      <a href="mailto:ciseldsouza@gmail.com">Contact</a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-    </nav>
+    <span class="footer-copy">© Cisel Dsouza</span>
+    <div class="footer-links">
+      <a href="decodes.html">Decodes</a>
+      <a href="about.html">About</a>
+      <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://linkedin.com/in/ciseldsouza" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ciseldsouza@gmail.com">Email</a>
+    </div>
   </footer>
 
   <script>
-    function handleSubmit() {
-      const input = document.getElementById('emailInput');
-      const formRow = document.getElementById('formRow');
-      const successMsg = document.getElementById('successMsg');
-      const email = input.value.trim();
-
-      if (!email || !email.includes('@')) {
-        input.style.outline = '2px solid #C4A882';
-        input.focus();
-        setTimeout(() => input.style.outline = '', 1500);
-        return;
-      }
-
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
       const formData = new FormData();
       formData.append('entry.1485403170', email);
-
       fetch('https://docs.google.com/forms/d/e/1FAIpQLSfN8VW8dOFFSNBKRwaWBfcNBKXVIDjpQ82DxEApX68iMgsXHQ/formResponse', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
+        method: 'POST', mode: 'no-cors', body: formData
       });
-
-      formRow.style.display = 'none';
-      successMsg.style.display = 'block';
-    }
-
-    document.getElementById('emailInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') handleSubmit();
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('signup-success').style.display = 'block';
     });
   </script>
 
