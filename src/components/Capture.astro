@@ -4,15 +4,15 @@ interface Props {
 }
 const { showLabel = true } = Astro.props;
 ---
-<div class="max-w-md text-left" data-capture-wrap data-reveal>
-  {showLabel && <p class="font-serif text-xl text-bone mb-1">the decode, in your inbox</p>}
+<div class="w-full max-w-xl text-left" data-capture-wrap data-reveal>
+  {showLabel && <p class="font-serif text-2xl text-bone mb-3">the decode, in your inbox</p>}
   <form
     method="POST"
     name="decode-signup"
     data-netlify="true"
     netlify-honeypot="bot-field"
     data-capture
-    class="group flex items-baseline gap-3 border-b border-faint pb-2 transition-colors focus-within:border-butter"
+    class="group flex items-baseline gap-4 border-b-2 border-faint pb-3 transition-colors focus-within:border-butter"
   >
     <input type="hidden" name="form-name" value="decode-signup" />
     <p class="hidden" aria-hidden="true">
@@ -25,15 +25,15 @@ const { showLabel = true } = Astro.props;
       placeholder="your@email.com"
       autocomplete="email"
       aria-label="email address"
-      class="w-full bg-transparent font-body text-sm font-light text-bone placeholder:text-faint outline-none focus-visible:outline-solid focus-visible:outline-offset-4 focus-visible:outline-butter/50"
+      class="w-full bg-transparent font-body text-lg font-light text-bone placeholder:text-faint outline-none focus-visible:outline-solid focus-visible:outline-offset-4 focus-visible:outline-butter/50 md:text-xl"
     />
-    <button type="submit" class="shrink-0 text-[0.65rem] tracking-[0.2em] uppercase text-butter cursor-pointer">
+    <button type="submit" class="shrink-0 font-display text-[0.8rem] font-medium tracking-[0.16em] uppercase text-butter cursor-pointer transition-transform duration-300 hover:translate-x-1 focus-visible:translate-x-1">
       get the decode <span aria-hidden="true">→</span>
     </button>
   </form>
-  <p class="mt-2 text-[0.7rem] tracking-[0.04em] text-faint" data-note>one decode a month. no spam.</p>
-  <p class="mt-2 font-serif text-sm text-butter" data-success hidden role="status">you're in — the next decode lands in your inbox.</p>
-  <p class="mt-2 text-[0.65rem] tracking-[0.04em] text-butter" data-error hidden role="alert">something went wrong — please try again.</p>
+  <p class="mt-3 text-[0.8rem] tracking-[0.04em] text-faint" data-note>one decode a month. no spam.</p>
+  <p class="mt-3 font-serif text-lg text-butter" data-success hidden role="status">you're in — the next decode lands in your inbox.</p>
+  <p class="mt-3 text-[0.8rem] tracking-[0.04em] text-butter" data-error hidden role="alert">something went wrong — please try again.</p>
 </div>
 
 <script>
