@@ -4,11 +4,8 @@ import '@fontsource/poppins/300.css';
 import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
-import '@fontsource/instrument-serif/400.css';
 import '@fontsource/instrument-serif/400-italic.css';
-import '@fontsource/inter/300.css';
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
+import { ClientRouter } from 'astro:transitions';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
@@ -36,6 +33,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
   </head>
   <body class="flex min-h-screen flex-col bg-charcoal font-body text-bone antialiased">
     <Nav />
@@ -44,8 +42,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </main>
     <Footer />
     <script>
-      const els = document.querySelectorAll('[data-reveal]');
-      if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && els.length) {
+      function initReveal() {
+        if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+        const els = document.querySelectorAll('[data-reveal]:not(.is-visible)');
+        if (!els.length) return;
         const io = new IntersectionObserver(
           (entries) => {
             for (const e of entries) {
@@ -59,6 +59,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         );
         els.forEach((el) => io.observe(el));
       }
+      // astro:page-load fires on initial load and after every client-side navigation
+      document.addEventListener('astro:page-load', initReveal);
     </script>
   </body>
 </html>

@@ -17,9 +17,6 @@ importers:
       '@fontsource/instrument-serif':
         specifier: ^5.2.5
         version: 5.2.8
-      '@fontsource/inter':
-        specifier: ^5.2.5
-        version: 5.2.8
       '@fontsource/poppins':
         specifier: ^5.2.5
         version: 5.2.7
@@ -448,9 +445,6 @@ packages:
 
   '@fontsource/instrument-serif@5.2.8':
     resolution: {integrity: sha512-s+bkz+syj2rO00Rmq9g0P+PwuLig33DR1xDR8pTWmovH1pUjwnncrFk++q9mmOex8fUQ7oW80gPpPDaw7V1MMw==}
-
-  '@fontsource/inter@5.2.8':
-    resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
 
   '@fontsource/poppins@5.2.7':
     resolution: {integrity: sha512-6uQyPmseo4FgI97WIhA4yWRlNaoLk4vSDK/PyRwdqqZb5zAEuc+Kunt8JTMcsHYUEGYBtN15SNkMajMdqUSUmg==}
@@ -2529,8 +2523,6 @@ snapshots:
     optional: true
 
   '@fontsource/instrument-serif@5.2.8': {}
-
-  '@fontsource/inter@5.2.8': {}
 
   '@fontsource/poppins@5.2.7': {}
 

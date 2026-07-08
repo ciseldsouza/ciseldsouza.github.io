@@ -13,10 +13,13 @@ const minutes = readTime(post.body ?? '');
 ---
 <a
   href={`/decodes/${post.id}/`}
-  class="group flex items-baseline gap-5 border-b border-line py-5 transition-transform duration-300 hover:translate-x-2 focus-visible:translate-x-2"
+  class="group relative flex items-center gap-6 overflow-hidden border-b border-line py-6 transition-transform duration-300 hover:translate-x-2 focus-visible:translate-x-2"
   data-reveal
 >
-  <span class="font-serif text-sm text-faint transition-colors group-hover:text-butter group-focus-visible:text-butter">{num}</span>
+  <span
+    class="font-display text-5xl font-bold leading-none text-line transition-colors duration-300 select-none group-hover:text-butter/25 group-focus-visible:text-butter/25 md:text-7xl"
+    aria-hidden="true"
+  >{num}</span>
   <span class="flex-1">
     <span class="block font-display font-bold text-xl md:text-2xl text-bone group-hover:text-butter group-focus-visible:text-butter transition-colors">{post.data.title}</span>
     <span class="sec-label mt-1 block">{post.data.tag} — {minutes} min</span>

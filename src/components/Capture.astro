@@ -1,4 +1,4 @@
-<div class="max-w-md" data-reveal>
+<div class="max-w-md text-left" data-capture-wrap data-reveal>
   <p class="font-serif text-xl text-bone mb-1">the decode, in your inbox</p>
   <form
     method="POST"
@@ -31,35 +31,43 @@
 </div>
 
 <script>
-  const form = document.querySelector<HTMLFormElement>('[data-capture]');
-  let pending = false;
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (pending) return;
-    pending = true;
-    const note = document.querySelector<HTMLElement>('[data-note]')!;
-    const success = document.querySelector<HTMLElement>('[data-success]')!;
-    const error = document.querySelector<HTMLElement>('[data-error]')!;
-    error.hidden = true;
-    const body = new URLSearchParams(
-      new FormData(form) as unknown as Record<string, string>
-    ).toString();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body,
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error(`form post failed: ${res.status}`);
-        form.hidden = true;
-        note.hidden = true;
-        success.hidden = false;
-      })
-      .catch(() => {
-        error.hidden = false;
-      })
-      .finally(() => {
-        pending = false;
+  function initCapture() {
+    document.querySelectorAll<HTMLFormElement>('[data-capture]').forEach((form) => {
+      if (form.dataset.bound) return;
+      form.dataset.bound = 'true';
+      const wrap = form.closest<HTMLElement>('[data-capture-wrap]')!;
+      const note = wrap.querySelector<HTMLElement>('[data-note]')!;
+      const success = wrap.querySelector<HTMLElement>('[data-success]')!;
+      const error = wrap.querySelector<HTMLElement>('[data-error]')!;
+      let pending = false;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (pending) return;
+        pending = true;
+        error.hidden = true;
+        const body = new URLSearchParams(
+          new FormData(form) as unknown as Record<string, string>
+        ).toString();
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error(`form post failed: ${res.status}`);
+            form.hidden = true;
+            note.hidden = true;
+            success.hidden = false;
+          })
+          .catch(() => {
+            error.hidden = false;
+          })
+          .finally(() => {
+            pending = false;
+          });
       });
-  });
+    });
+  }
+  // rebind after view-transition navigations; fires on initial load too
+  document.addEventListener('astro:page-load', initCapture);
 </script>

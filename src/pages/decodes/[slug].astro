@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
 import { readTime } from '../../utils/readTime';
 import { getPublishedPosts } from '../../utils/posts';
 
@@ -45,4 +46,5 @@ const dateLabel = post.data.date.toLocaleDateString('en-US', { month: 'long', ye
       )}
     </div>
   </nav>
+  <CtaBand />
 </Layout>

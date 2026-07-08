@@ -4,6 +4,7 @@ import Capture from '../components/Capture.astro';
 import Marquee from '../components/Marquee.astro';
 import JournalRow from '../components/JournalRow.astro';
 import InstaStrip from '../components/InstaStrip.astro';
+import CtaBand from '../components/CtaBand.astro';
 import { getPublishedPosts } from '../utils/posts';
 
 const posts = (await getPublishedPosts()).slice(0, 3);
@@ -65,4 +66,6 @@ const posts = (await getPublishedPosts()).slice(0, 3);
   </section>
 
   <InstaStrip />
+
+  <CtaBand />
 </Layout>
