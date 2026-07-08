@@ -48,24 +48,36 @@ const items = posts
   .filter((i): i is { post: BeholdPost; img: BeholdSize } => Boolean(i.img));
 ---
 {items.length > 0 && (
-  <section class="border-t border-line px-6 py-10 md:px-12" data-reveal>
-    <div class="mb-5 flex items-baseline justify-between">
-      <h2 class="sec-label">from instagram</h2>
+  <section class="border-t border-line px-6 py-12 md:px-12 md:py-16">
+    <div class="mb-6 flex items-baseline justify-between" data-reveal>
+      <h2 class="font-display font-bold text-2xl text-bone md:text-3xl">from <span class="text-butter">instagram</span></h2>
       <a href={`https://instagram.com/${username}`} target="_blank" rel="noopener" class="u-link text-[0.7rem] tracking-[0.2em] uppercase text-muted hover:text-bone focus-visible:text-bone transition-colors">@{username} <span aria-hidden="true">→</span></a>
     </div>
-    <div class="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3">
-      {items.map(({ post, img }) => (
-        <a href={post.permalink} target="_blank" rel="noopener" class="group/ig relative shrink-0 snap-start">
+    <div class="ig-grid grid grid-cols-2 gap-0.5 sm:grid-cols-3" style={`--ig-cols:${items.length}`}>
+      {items.map(({ post, img }, i) => (
+        <a
+          href={post.permalink}
+          target="_blank"
+          rel="noopener"
+          class="group/ig relative block aspect-square overflow-hidden"
+          data-reveal
+          style={`transition-delay:${i * 90}ms`}
+        >
           <img
             src={img.mediaUrl}
             alt={post.prunedCaption ? post.prunedCaption.slice(0, 120) : `Instagram post by @${username}`}
             width={img.width}
             height={img.height}
             loading="lazy"
-            class="aspect-square w-52 rounded-sm object-cover brightness-[.92] saturate-[.85] transition group-hover/ig:brightness-100 group-hover/ig:saturate-100 group-focus-visible/ig:brightness-100 group-focus-visible/ig:saturate-100"
+            class="h-full w-full object-cover brightness-[.88] saturate-[.8] transition duration-500 ease-out group-hover/ig:scale-[1.05] group-hover/ig:brightness-100 group-hover/ig:saturate-100 group-focus-visible/ig:scale-[1.05] group-focus-visible/ig:brightness-100 group-focus-visible/ig:saturate-100"
           />
+          <span class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover/ig:opacity-100 group-focus-visible/ig:opacity-100" aria-hidden="true"></span>
+          <span class="pointer-events-none absolute inset-x-3 bottom-2.5 flex translate-y-1 items-center justify-between gap-2 opacity-0 transition duration-300 group-hover/ig:translate-y-0 group-hover/ig:opacity-100 group-focus-visible/ig:translate-y-0 group-focus-visible/ig:opacity-100">
+            <span class="truncate text-[0.65rem] tracking-[0.08em] text-bone/90">{post.prunedCaption ? post.prunedCaption.slice(0, 60) : `@${username}`}</span>
+            <span class="text-butter" aria-hidden="true">↗</span>
+          </span>
           {(post.mediaType === 'VIDEO' || post.isReel) && (
-            <span class="absolute right-2 top-2 text-bone/90 drop-shadow" aria-hidden="true">▶</span>
+            <span class="absolute right-2.5 top-2.5 text-xs text-bone/90 drop-shadow" aria-hidden="true">▶</span>
           )}
         </a>
       ))}
