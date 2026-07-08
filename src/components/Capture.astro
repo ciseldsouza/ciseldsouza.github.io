@@ -1,5 +1,11 @@
+---
+interface Props {
+  showLabel?: boolean;
+}
+const { showLabel = true } = Astro.props;
+---
 <div class="max-w-md text-left" data-capture-wrap data-reveal>
-  <p class="font-serif text-xl text-bone mb-1">the decode, in your inbox</p>
+  {showLabel && <p class="font-serif text-xl text-bone mb-1">the decode, in your inbox</p>}
   <form
     method="POST"
     name="decode-signup"
