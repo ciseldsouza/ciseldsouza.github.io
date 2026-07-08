@@ -6,7 +6,7 @@ export async function GET(context) {
 
   return rss({
     title: 'cisel dsouza — the decodes',
-    description: "Weekly breakdowns of the marketing, branding and psychology behind the brands everyone's talking about.",
+    description: "Monthly breakdowns of the marketing, branding and psychology behind the brands everyone's talking about.",
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
