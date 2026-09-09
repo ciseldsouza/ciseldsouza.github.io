@@ -27,7 +27,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
-    <link rel="alternate" type="application/rss+xml" title="cisel dsouza — the decodes" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="cisel dsouza | the decodes" href="/rss.xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />

@@ -31,14 +31,6 @@ html {
   letter-spacing: -0.01em;
 }
 
-/* instagram mosaic — desktop columns match the post count exactly, so the
-   row always fills the width whether Behold returns 3 posts or 6 */
-@media (min-width: 1024px) {
-  .ig-grid {
-    grid-template-columns: repeat(var(--ig-cols, 6), minmax(0, 1fr));
-  }
-}
-
 /* film grain — barely-there noise so the charcoal reads as material, not flat fill */
 body::before {
   content: "";

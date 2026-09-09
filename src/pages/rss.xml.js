@@ -5,7 +5,7 @@ export async function GET(context) {
   const posts = await getPublishedPosts();
 
   return rss({
-    title: 'cisel dsouza — the decodes',
+    title: 'cisel dsouza | the decodes',
     description: "Monthly breakdowns of the marketing, branding and psychology behind the brands everyone's talking about.",
     site: context.site,
     items: posts.map((post) => ({

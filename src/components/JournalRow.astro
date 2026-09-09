@@ -22,7 +22,7 @@ const minutes = readTime(post.body ?? '');
   >{num}</span>
   <span class="flex-1">
     <span class="block font-display font-bold text-xl md:text-2xl text-bone group-hover:text-butter group-focus-visible:text-butter transition-colors">{post.data.title}</span>
-    <span class="sec-label mt-1 block">{post.data.tag} — {minutes} min</span>
+    <span class="sec-label mt-1 block">{post.data.tag} · {minutes} min</span>
   </span>
   <span class="text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true">→</span>
 </a>

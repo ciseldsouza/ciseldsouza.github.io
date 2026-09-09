@@ -1,7 +1,6 @@
 ---
 import { render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import CtaBand from '../../components/CtaBand.astro';
 import { readTime } from '../../utils/readTime';
 import { getPublishedPosts } from '../../utils/posts';
 
@@ -18,7 +17,7 @@ const { Content } = await render(post);
 const minutes = readTime(post.body ?? '');
 const dateLabel = post.data.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }).toLowerCase();
 ---
-<Layout title={`${post.data.title} — cisel dsouza`} description={post.data.description} ogType="article">
+<Layout title={`${post.data.title} | cisel dsouza`} description={post.data.description} ogType="article">
   <article class="mx-auto max-w-2xl px-6 pt-16 pb-12 md:pt-24">
     <a href="/decodes/" class="u-link text-[0.65rem] tracking-[0.2em] uppercase text-muted hover:text-bone focus-visible:text-bone transition-colors">← all decodes</a>
     <p class="sec-label mt-8">{post.data.tag}</p>
@@ -46,5 +45,4 @@ const dateLabel = post.data.date.toLocaleDateString('en-US', { month: 'long', ye
       )}
     </div>
   </nav>
-  <CtaBand />
 </Layout>

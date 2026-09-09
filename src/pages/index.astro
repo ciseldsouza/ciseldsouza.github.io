@@ -1,29 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Capture from '../components/Capture.astro';
 import Marquee from '../components/Marquee.astro';
 import JournalRow from '../components/JournalRow.astro';
-import InstaStrip from '../components/InstaStrip.astro';
-import CtaBand from '../components/CtaBand.astro';
 import { getPublishedPosts } from '../utils/posts';
 
 const posts = (await getPublishedPosts()).slice(0, 3);
 ---
 <Layout
-  title="cisel dsouza — you know the brands. here's why you buy them."
+  title="cisel dsouza | Let's talk marketing &amp; branding."
   description="I'm Cisel. I decode the marketing, branding and psychology behind the brands everyone's talking about. New decode every month."
 >
   <section class="px-6 pt-16 pb-12 text-center md:px-12 md:pt-24 md:pb-16">
-    <p class="sec-label" data-reveal>est. 2026</p>
-    <h1 class="mt-5 font-display font-semibold lowercase leading-[1.02] tracking-[-0.02em] text-[clamp(2.5rem,6.5vw,5.5rem)]" data-reveal>
-      you know the brands.<br />here's <em class="font-accent italic font-normal text-butter">why</em> you buy them.
+    <h1 class="font-display font-semibold lowercase leading-[1.02] tracking-[-0.02em] text-[clamp(2.5rem,6.5vw,5.5rem)]" data-reveal>
+      Let's talk<br />marketing <em class="font-accent italic font-normal text-butter">&amp;</em> branding.
     </h1>
     <p class="mx-auto mt-8 max-w-md text-base font-light leading-relaxed text-muted" data-reveal>
       I'm Cisel. I decode the marketing, branding and psychology behind the brands
-      everyone's talking about. New decode every month.
+      everyone's talking about.
     </p>
-    <div class="mt-12 flex justify-center" data-reveal>
-      <Capture />
+    <div class="mt-12 flex flex-wrap justify-center gap-4" data-reveal>
+      <a
+        href="/decodes/"
+        class="inline-block border border-bone bg-bone px-8 py-3 font-display text-[0.7rem] font-medium tracking-[0.14em] uppercase text-charcoal transition-opacity hover:opacity-75 focus-visible:opacity-75"
+      >
+        Read the decodes
+      </a>
+      <a
+        href="https://instagram.com/ciseldsouza"
+        target="_blank"
+        rel="noopener"
+        class="inline-block border border-faint px-8 py-3 font-display text-[0.7rem] font-medium tracking-[0.14em] uppercase text-bone transition-opacity hover:opacity-75 focus-visible:opacity-75"
+      >
+        Follow on Instagram
+      </a>
     </div>
   </section>
 
@@ -57,13 +66,10 @@ const posts = (await getPublishedPosts()).slice(0, 3);
     <div class="px-6 py-10 md:px-12" data-reveal>
       <h2 class="sec-label mb-5">elsewhere</h2>
       <p class="max-w-xs text-sm font-light leading-relaxed text-muted">
-        daily thinking, behind the scenes, and work in progress —
+        daily thinking, behind the scenes, and work in progress.
         <a href="https://instagram.com/ciseldsouza" target="_blank" rel="noopener" class="u-link text-bone">@ciseldsouza</a>
       </p>
     </div>
   </section>
 
-  <InstaStrip />
-
-  <CtaBand />
 </Layout>
