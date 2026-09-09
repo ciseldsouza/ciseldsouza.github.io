@@ -4,3 +4,6 @@ dist/
 .superpowers/
 .DS_Store
 .direnv/
+
+# Local Netlify folder
+.netlify
